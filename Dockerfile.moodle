@@ -1,0 +1,10 @@
+FROM bitnami/moodle:latest
+
+ENV ALLOW_EMPTY_PASSWORD=yes
+ENV MOODLE_DATABASE_USER=bn_moodle
+ENV MOODLE_DATABASE_PASSWORD=bitnami
+ENV MOODLE_DATABASE_NAME=bitnami_moodle
+
+VOLUME ["/bitnami/moodle", "/bitnami/moodledata"]
+
+EXPOSE 8080 8443

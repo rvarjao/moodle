@@ -1,0 +1,14 @@
+FROM bitnami/mariadb:latest
+
+ENV ALLOW_EMPTY_PASSWORD=yes
+ENV MARIADB_USER=bn_moodle
+ENV MARIADB_PASSWORD=bitnami
+ENV MARIADB_DATABASE=bitnami_moodle
+
+USER root
+
+RUN mkdir -p /bitnami/mariadb && \
+    chown -R 1001:1001 /bitnami/mariadb && \
+    chmod -R g+rwX /bitnami/mariadb
+
+VOLUME ["/bitnami/mariadb"]
